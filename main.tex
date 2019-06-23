@@ -23,7 +23,7 @@
 
 \title{A low-cost movable station for fast and effective agroclimatic monitoring}
 \author{
-    \IEEEauthorblockN{Raffaele Martino\IEEEauthorrefmark{1}, Giuliano Langella\IEEEauthorrefmark{2} and  Massimo Nicolazzo\IEEEauthorrefmark{1}}
+    \IEEEauthorblockN{Raffaele Martino\IEEEauthorrefmark{1}, Massimo Nicolazzo\IEEEauthorrefmark{1}} and Giuliano Langella\IEEEauthorrefmark{2}
     \IEEEauthorblockA{\IEEEauthorrefmark{1}Department of Electrical Engineering and Information Technology, University of Naples Federico II, Naples, NA, Italy}
     \IEEEauthorblockA{\IEEEauthorrefmark{2}Department of Agriculture, University of Naples Federico II, Portici, NA, Italy}
 }
@@ -37,7 +37,8 @@
 \maketitle
 
 \begin{abstract}
-A low-cost, low-power and movable agroclimatic station is presented in this work to overcome the cost limitation of traditional stations. Moreover, the proposed station can be moved easily, which is useful for temporary deployments aimed to tune the parameters of a model-based simulation such as a pest risk model.
+A low-cost and low-power agroclimatic station is presented in this work to overcome the cost limitation of traditional stations.
+Moreover, the proposed station can be moved easily, which is useful for temporary deployments aimed to tune the parameters of a model-based simulation such as a pest risk model.
 A first evaluation of the proposed station is presented, and the results, although still incomplete, are quite promising also to monitor new locations in which a tuned model can run using detailed agroclimatic data.
 \end{abstract}
 
@@ -49,10 +50,14 @@ A first evaluation of the proposed station is presented, and the results, althou
 
 This paper presents a low-cost station, which can be deployed in high numbers due to its low cost, and moved easily to a different installation location.
 
-Traditional agrometereological stations are highly expensive, therefore local authorities often cannot afford the number of stations large enough to properly monitor the environment of which they are responsible. Moreover, their high cost prevents farms from employing them to monitor their own territory.
+Traditional agrometereological stations, in particular those managed by local government agencies, are highly expensive, therefore local authorities often cannot afford the number of stations large enough to properly monitor the environment of which they are responsible. Moreover, their high cost prevents farmers from employing them to monitor their own land.
 
-What is more, traditional agrometereological stations are meant to be permanent. They are supposed to stay for many years in the location where they have been deployed, hence they are not designed to be moved easily. However, there are models of interest in the agricultural field, such as pest risk models, which require a very precise characterisation of the area of interest in order to tune the parameters of the model.
-This characterisation requires an high number of stations to be concentrated in the area of interest during the calibration phase, but this concentration is no longer necessary when the calibration is terminated.
+What is more, traditional agrometereological stations are meant to be permanent.
+They are supposed to stay for many years in the location where they have been deployed, hence they are not designed to be moved easily.
+However, there exist services of interest in agriculture, such as those based on the use of models (e.g. crop pests), enabling the simulation of specific biophysical patterns.
+They require a very precise weather characterisation of the area of interest in order to fine tune the parameters of the model and customize simulations.
+%The most commonly used models based on agrometeorological data are those simulating the risk of pests for crops.
+The characterisation requires an high number of stations to be concentrated in the area of interest during the calibration phase, but this concentration is no longer necessary when the calibration is terminated.
 Traditional agrometereological stations, too costly to be left deployed unnecessarily and hard to relocate, are clearly unsuitable to this end.
 
 The agrometereological station  proposed in this work can be employed to integrate and reinforce existing institutional networks of permanent stations, in order to improve the coverage of the territory, with a limited expense; and can be easily moved from a location to another, so as to be concentrated in particular areas for the time needed to characterise it, and then moved to a different area.
@@ -69,12 +74,14 @@ On the other hand, since the cost of each station is in the order of the tens of
 Moreover, the CAR is legally obliged to produce periodic agrometeorological and pest bulletins \cite{eu-directive:pesticide}, possibly based on models tuned for the Regional territory.
 The precise characterisation of the environment required by these models cannot be achieved with the current monitoring density of the RAR. 
 
-The CAR has planned to handle these issues by including in the URCoFi\footnote{\emph{Unità Regionale di Coordinamento e potenziamento delle attività di sorveglianza, ricerca, sperimentazione, monitoraggio e formazione in ambito Fitosanitario}, Unit of ccoordination and strengthening of the activities of surveillance, research, experimentation, monitoring and education in the phytosanitary field.} Executive Plan 2018-2019, an agrometereological and pest monitoring package, in which the Department of Agriculture of the University of Naples Federico II is also involved. 
-One of the objectives of this work package is the development of an agrometereological station tailored to overcome the limitations of the current regional network, but also to provide a cheap Agriculture 4.0 solution to farmers for monitoring their land, involve them in the network and run possibly advanced and complex models in their fields.
+Since 2016, the CAR has planned to handle these issues by including in the URCoFi\footnote{\emph{Unità Regionale di Coordinamento e potenziamento delle attività di sorveglianza, ricerca, sperimentazione, monitoraggio e formazione in ambito Fitosanitario}, Unit of ccoordination and strengthening of the activities of surveillance, research, experimentation, monitoring and education in the phytosanitary field\temp{[DEL], in which the Department of Agriculture of the University of Naples Federico II is also involved}.} Executive Plan, an agrometereological and pest monitoring package. 
+One of the objectives of this work package is the development of an agrometereological station tailored to overcome the limitations of the current regional network, but also to provide a cheap Agriculture 4.0 solution to farmers for monitoring their land, involve them in the network and run possibly advanced and complex models customized for their crops.
 
 \section{Contribution}
 The advantage of the proposed agrometerelogical station design is twofold. On one hand, its reduced cost makes it affordable to deploy an high number of monitoring station also for authorities with limited financial budget. 
-Also, private farm firms can contribute to the monitoring network by deploying these stations in their own land. In this way, firms can benefit from dedicated agroclimatic measurement as well as increased accuracy of the pest models, since there are actual measuring points within their farm, with a limited expense. On the other end, the designed station is easy to relocate.
+Also, private farm firms can contribute to the monitoring network by deploying these stations in their own land.
+In this way, firms can benefit from dedicated agroclimatic measurement as well as increased accuracy of the pest models, since there are actual measuring points within their farm, with a limited expense.
+On the other end, the designed station is easy to relocate even in the same farm to monitor distinct micro-environments or different crops.
 This allows for temporary deployments of an high number of monitoring station in a limited area to perform a certain study, at the end of which they can be moved to a different area. This can be useful for characterising the area which a specific pest risk model must operate on.
 
 The development and diffusion of the Internet of Things (IoT) has made available on the market the necessary equipment to meet the design requirements, namely single-board microcontrollers, network chips and small-sized sensors \cite{singh:iot-devices}.
@@ -89,12 +96,19 @@ It is worth stressing that the low cost requirement must be met without excessiv
 \end{figure}
 
 \subsection{Station design}
-The electronics of the station is shown in \cref{fig:station} The core of the measurement station is the Espressif ESP32 System-on-Chip \cite{espressif:sparkfun}. This board offers specific features for low-power IoT designs, such as a deep sleep stand-by mode. The board provides a dual-core 32-bit processor operating at the relatively low frequency of \SI{240}{\mega\hertz}, \SI{520}{\kilo\byte} of internal static RAM for storing the application code, and several peripherals which have been useful for the design of the agroclimatic station. One of such peripherals is the non-volatile flash memory, which contains the log of the measurements performed in a human-readable format. %Since each measurement currently takes \SI{37}{\byte}, and the flash memory is \SI{4}{MB} in size, the station can store more than two years of data.
+The electronics of the station is shown in \cref{fig:station}.
+The core of the measurement station is the Espressif ESP32 System-on-Chip \cite{espressif:sparkfun}. 
+This board offers specific features for low-power IoT designs, such as a deep sleep stand-by mode. 
+The board provides a dual-core 32-bit processor operating at the relatively low frequency of \SI{240}{\mega\hertz}, \SI{520}{\kilo\byte} of internal static RAM for storing the application code, and several peripherals which have been useful for the design of the agroclimatic station. 
+One of such peripherals is the non-volatile flash memory, which contains the log of the measurements performed in a human-readable format. %Since each measurement currently takes \SI{37}{\byte}, and the flash memory is \SI{4}{MB} in size, the station can store more than two years of data.
 
 % Furthermore, the board includes a Bluetooth module. This feature has been exploited to develop an Android application for on-site diagnosis of the station, calibration of the sensors and visualization of measured data. Measurement can also be downloaded via Bluetooth on the mobile device running the application.
 
-The station is currently equipped with three sensors. A digital sensor provides the values of air temperature and air humidity. %, with an average accuracy of \SI{0.5}{\celsius} for the former and \SI{4,5}{\%} for the latter \cite{sensirion:sht10-temp-hum}. 
-A Waspmote complex digital sensor is used to compute rainfall, wind direction, wind speed and wind gusts \cite{libellium:ws3000}. Lastly, a standard, analogic sensor is used to measure leaf wetness \cite{vaisala:yl83-leaf-wetness}. This sensor takes advantage of the ADC included in the ESP32 microcontroller.
+The station is currently equipped with three sensors. 
+A digital sensor provides the values of air temperature and air humidity. %, with an average accuracy of \SI{0.5}{\celsius} for the former and \SI{4,5}{\%} for the latter \cite{sensirion:sht10-temp-hum}. 
+A Waspmote complex digital sensor is used to compute rainfall, wind direction and wind speed \cite{libellium:ws3000}.
+Lastly, a standard, analogic sensor is used to measure leaf wetness \cite{vaisala:yl83-leaf-wetness}.
+This sensor takes advantage of the ADC included in the ESP32 microcontroller.
 
 % Electronics is packaged in a tailored, durable and 3D-printed case specifically designed to provide support for sensors and electronic equipment and to protect them from atmospheric weathering (\cref{fig:tailored-case}).
 % \begin{figure}
@@ -104,16 +118,22 @@ A Waspmote complex digital sensor is used to compute rainfall, wind direction, w
 %     \label{fig:tailored-case}
 % \end{figure}
 
-The station is currently programmed to provide measurements on a 10-minute basis, and to stay active only during the data capturing phase, which takes less than 20 seconds. This means that the whole station is active for the \SI{3}{\%} of the time. For the remaining \SI{97}{\%} of the time, the station is in deep sleep mode, so as to save a huge share of energy. % In order to improve the accuracy of the wake-up cycle, an external \emph{Real-Time Clock} with an independent battery \cite{maxim:rtc} has been added to the design.
+The station is currently programmed to provide measurements on a 10-minute basis, and to stay active only during the data collection and communication phases, which take less than 20 seconds overall. This means that the whole station is active for the \SI{3}{\%} of the time.
+For the remaining \SI{97}{\%} of the time, the station is in deep sleep mode, so as to save a huge share of energy. % In order to improve the accuracy of the wake-up cycle, an external \emph{Real-Time Clock} with an independent battery \cite{maxim:rtc} has been added to the design.
 
-The data capturing phase includes also the time required for the transmission of the performed measurement to the database server. To this end, the station is equipped with a Sigfox network chip \cite{sigfox:module}. The stations are currently programmed to transmit the measurements synchronously, in order to allow real-time processing and publishing of data.
+The data communication phase includes the time required for the transmission of the performed measurement to the remote database server.
+To this end, the station is equipped with a Sigfox network chip \cite{sigfox:module}.
+The stations are currently programmed to transmit the measurements synchronously, in order to allow real-time processing and publishing of data.
 
-The station is powered by a \SI{3.7}{\volt}, \SI{3300}{\milli\amperehour} internal battery. Thanks to the aforementioned operation time optimisation, the battery has been proven to be able to provide about 25 days of lifetime without being charged. This budget is only used in dark hours, thanks to a solar panel which the station is equipped of. 
+The station is powered by a \SI{3.7}{\volt}, \SI{3300}{\milli\amperehour} internal battery.
+Thanks to the aforementioned operation time optimisation, the battery has been proven to be able to provide about 25 days of lifetime without being charged.
+This budget is only used in dark hours, thanks to a solar panel which the station is equipped of. 
 The complete recharge of the internal battery % by the solar panel
 during daylight hours has been shown by on-field tests.
 
 \subsection{Network infrastructure}
-The proposed station can be effectively used to deploy a monitoring network, the architecture of which is shown in \cref{fig:network}. Apart from the stations, it includes a database server to store, process and publish data. 
+The proposed station can be effectively used to deploy a monitoring network, the architecture of which is shown in \cref{fig:network}. 
+Apart from the stations, it includes a database server to store, process and publish data. 
 It relies on the Sigfox cloud network \cite{sigfox:network-architecture} for communication between the stations and the network database.
 
 \begin{figure}
@@ -160,7 +180,7 @@ The original measurement is rounded into seven equally spaced values between \SI
 
 \begin{figure}
     \centering
-    \includegraphics[scale=.25]{deployment_pignataro.jpg}
+    \includegraphics[scale=.35]{deployment_pignataro_cut.png}
     \caption{Station installed for validation purposes}
     \label{fig:deployment}
 \end{figure}
